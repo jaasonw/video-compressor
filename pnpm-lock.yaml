@@ -7,6 +7,9 @@ dependencies:
   '@ffmpeg/ffmpeg':
     specifier: ^0.11.6
     version: 0.11.6
+  mvp.css:
+    specifier: ^1.12.0
+    version: 1.12.0
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte':
@@ -1039,6 +1042,10 @@ packages:
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
     dev: true
+
+  /mvp.css@1.12.0:
+    resolution: {integrity: sha512-X/nIJUP/aIaD6gzPEOLIQxxotZEpRhnwKADT4ydxnnt8AACOSu/PJxFKCW1ouxbXVVERWOYxJp/tA45U0EVPaw==}
+    dev: false
 
   /mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
