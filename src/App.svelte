@@ -18,7 +18,6 @@
   const convert = async (size, quality, fps, audio) => {
     const targetSize = size * 1024 * 1024;
     const fileFormat = files[0].name.split(".").at(-1);
-    // console.log(fileFormat);
     ffmpeg.FS("writeFile", `test.${fileFormat}`, await fetchFile(files[0]));
     messages = [...messages, `Loaded ${files[0].name}`];
 
@@ -45,7 +44,7 @@
         `scale=-2:${quality}`,
         audio ? "-c:a" : " -c:an",
         "copy",
-        "output_temp.mp4"
+        "output.mp4"
       );
 
       data = ffmpeg.FS("readFile", "output.mp4");
@@ -57,7 +56,6 @@
       ];
     }
     messages = [...messages, `Finished compressing to ${currentSize} bytes`];
-    // Create a URL
     converted = URL.createObjectURL(
       new Blob([data.buffer], { type: "video/mp4" })
     );
