@@ -42,7 +42,7 @@
         fps,
         "-vf",
         `scale=-2:${quality}`,
-        audio ? "-c:a" : " -c:an",
+        audio == "yes" ? "-c:a" : " -c:an",
         "copy",
         "output.mp4"
       );
