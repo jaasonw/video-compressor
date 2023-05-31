@@ -24,6 +24,7 @@
     let numIterations = 0;
     let currentSize = files[0].size;
     let data = ffmpeg.FS("readFile", `test.${fileFormat}`);
+    let crf = 30;
     while (currentSize > targetSize) {
       if (numIterations > 5) {
         alert(
@@ -39,15 +40,18 @@
         "-preset",
         "ultrafast",
         "-crf",
-        fps,
+        `${crf++}`,
         "-vf",
         `scale=-2:${quality}`,
+        "-vf",
+        `fps=${fps}`,
         audio == "yes" ? "-c:a" : " -c:an",
         "copy",
         "output.mp4"
       );
 
       data = ffmpeg.FS("readFile", "output.mp4");
+      ffmpeg.FS("writeFile", `test.${fileFormat}`, data);
       currentSize = data.byteLength;
       numIterations++;
       messages = [
